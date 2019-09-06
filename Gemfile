@@ -32,6 +32,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap-sass'
 gem 'sass-rails'
 
+gem 'rails_12factor', group: :production
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
