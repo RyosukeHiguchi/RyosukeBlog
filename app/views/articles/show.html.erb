@@ -1,6 +1,11 @@
 <div class="container">
-  <div class="col-md-12 margin-top-5per article-block">
-      <%= image_tag 'LIQUOR_alcohol_spirits_poster_drinks_drink_7083x4723のコピー.jpg', class: 'article-image padding-top-15' %>
+  <div class="col-md-12 margin-top-5per article-block">      
+      <% if @article.image_id.present? %>
+        <%= image_tag attachment_url(@article, :image), class: 'article-image padding-top-15' %>
+      <% else %>
+        <p class="text-center padding-top-80", style='height: 200px; width: 100%'>画像がセットされていません</p>
+      <% end %>
+
       <h1><%= @article.title %></h1>
       <div class="padding-bottom-15" style="padding: 10px">
         <%= simple_format @article.body %>

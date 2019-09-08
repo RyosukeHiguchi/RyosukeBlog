@@ -1,0 +1,39 @@
+<div class="container">
+  <h2 class="text-center">ユーザー登録</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="form-group">
+    <%= label_tag(:profile_name, '名前(ニックネームも可)') %><br />
+    <%= text_field_tag 'profile[name]', '', class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email, 'メールアドレス' %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password, 'パスワードを作成' %>
+    <% if @minimum_password_length %>
+    (<%= @minimum_password_length %> 文字以上入力してください)
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :password_confirmation, 'パスワードを再入力(確認)' %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+  </div>
+
+  <div class="actions text-center">
+    <%= f.submit "登録する", class: 'btn btn-success btn-block btn-lg' %>
+  </div>
+<% end %>
+
+  <%= render "devise/shared/links" %>
+</div>
+
+
+

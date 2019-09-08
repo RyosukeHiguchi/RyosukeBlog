@@ -2,8 +2,12 @@
   <div class="row">
   <% @articles.each do |article| %>
   <%= link_to article do %>
-  <div class="col-md-3 margin-top-5per article-block padding-top-15">
-      <%= image_tag 'LIQUOR_alcohol_spirits_poster_drinks_drink_7083x4723のコピー.jpg', class: 'img-responsive' %>
+  <div class="col-md-3 margin-top-5per article-block">
+      <% if article.image_id.present? %>
+        <%= image_tag attachment_url(article, :image), class: 'img-responsive padding-top-15 article-list-image' %>
+      <% else %>
+        <p class="text-center padding-top-80", style='height: 140px; width: 100%'>画像がセットされていません</p>
+      <% end %>
       <div class="padding-bottom-15">
       <p class="title"><%= article.title %></p>
       <span><%= article.created_at.strftime("%Y年%m月%d日") %>

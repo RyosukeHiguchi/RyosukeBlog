@@ -32,7 +32,22 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bootstrap-sass'
 gem 'sass-rails'
 
+gem 'devise'
+
+gem "refile", github: 'refile/refile', require: "refile/rails"
+gem "refile-mini_magick", github: 'refile/refile-mini_magick'
+
+gem "font-awesome-rails"
+
+gem "jquery-rails"
+gem 'jquery-turbolinks'
+
 gem 'rails_12factor', group: :production
+
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.2'
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
