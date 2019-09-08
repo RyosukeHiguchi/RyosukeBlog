@@ -47,6 +47,9 @@ gem 'rails_12factor', group: :production
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '5.0'
 
+# gem 'kaminari'
+gem 'will_paginate',           '3.1.7'
+gem 'bootstrap-will_paginate', '1.0.0'
 
 
 group :development, :test do

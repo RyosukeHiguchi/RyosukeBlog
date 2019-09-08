@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   before_action :validate_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = current_user.articles.order(created_at: :desc)
+    @articles = current_user.articles.paginate(page: params[:page], per_page: 8).order(created_at: :desc)
   end
 
   def show
